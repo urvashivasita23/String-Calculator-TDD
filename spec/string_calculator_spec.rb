@@ -41,4 +41,20 @@ describe StringCalculator do
       expect(result).to eq(9)
     end
   end
+
+  context 'Test Case 3' do
+    it 'Valid Input: \n allowed between number : return the sum ' do
+      string = '1\n,3,4'
+      result = StringCalculator.add(string)
+      # Expect the result to be the sum of the all numbers and allow \n between number
+      expect(result).to eq(8)
+    end
+
+    it 'Invalid Input: \n allowed between number : return Not allowd' do
+      string = "1,\n"
+      result = StringCalculator.add(string)
+      # Expect the result to be the sum of the all numbers and not allow \n between number
+      expect(result).to eq('Not Allowed')
+    end
+  end
 end
