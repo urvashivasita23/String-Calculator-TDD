@@ -72,3 +72,12 @@ describe 'StringCalculator: Test Case 4' do
     expect(result).to eq(6)
   end
 end
+
+describe 'StringCalculator: Test Case 5' do
+  it 'Negative Number not allowed : return error message : single value' do
+    string = '1, -2, 4'
+    result = StringCalculator.add(string)
+    # Expect the result to be the sum of the all numbers and allow \n between number
+    expect(result).to eq('negatives not allowed -2')
+  end
+end
