@@ -3,6 +3,6 @@
 # String Calculator File
 class StringCalculator
   def self.add(string_input)
-    0 if string_input.empty?
+    string_input.empty? ? 0 : string_input.to_i
   end
 end
