@@ -8,12 +8,8 @@ class StringCalculator
     else
       return 'Not Allowed' if string_input.include?(",\n")
 
-      arr = []
-      string_input.delete(', ').chars.each do |char|
-        arr.push(char.to_i)
-      end
-
-      arr.sum
+      numbers = string_input.delete(', ').chars.map(&:to_i)
+      numbers.sum
     end
   end
 end
