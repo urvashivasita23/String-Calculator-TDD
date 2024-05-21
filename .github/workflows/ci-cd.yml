@@ -1,25 +1,25 @@
-name: CI/CD
+name: CI
 
 on:
   push:
-    branches:
-      - develop
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7 # Change this to your Ruby version
 
-      - name: Install dependencies
-        run: bundle install
+    - name: Install dependencies
+      run: gem install rspec
 
-      - name: Run tests
-        run: bundle exec rspec
+    - name: Run tests
+      run: rspec
