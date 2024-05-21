@@ -14,4 +14,10 @@ describe StringCalculator do
     result = StringCalculator.add(string)
     expect(result).to eq(string.to_i)
   end
+
+  it 'returns the sum of two numbers if they are comma-separated' do
+    string = '2,3'
+    result = StringCalculator.add(string)
+    expect(result).to eq(5)
+  end
 end
