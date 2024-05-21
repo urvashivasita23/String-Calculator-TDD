@@ -8,4 +8,10 @@ describe StringCalculator do
     result = StringCalculator.add(string)
     expect(result).to eq(0)
   end
+
+  it 'returns the number itself if a single value is provided' do
+    string = '2'
+    result = StringCalculator.add(string)
+    expect(result).to eq(string.to_i)
+  end
 end
