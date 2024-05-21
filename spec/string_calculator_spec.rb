@@ -20,4 +20,10 @@ describe StringCalculator do
     result = StringCalculator.add(string)
     expect(result).to eq(5)
   end
+
+  it 'returns the sum of comma-separatedn n numbers ' do
+    string = '2,3,4'
+    result = StringCalculator.add(string)
+    expect(result).to eq(9)
+  end
 end
