@@ -56,3 +56,19 @@ describe 'StringCalculator: Test Case 3' do
     expect(result).to eq('Not Allowed')
   end
 end
+
+describe 'StringCalculator: Test Case 4' do
+  it 'Support different delimiters : return the sum ' do
+    string = "//;\n1;2"
+    result = StringCalculator.add(string)
+    # Expect the result to be the sum of the all numbers and allow ; between number
+    expect(result).to eq(3)
+  end
+
+  it 'Support different delimiters : return the sum ' do
+    string = "//#\n1#2#3"
+    result = StringCalculator.add(string)
+    # Expect the result to be the sum of the all numbers and allow # between number
+    expect(result).to eq(6)
+  end
+end
