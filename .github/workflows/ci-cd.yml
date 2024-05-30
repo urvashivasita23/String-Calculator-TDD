@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7 # Change this to your Ruby version
+
+    - name: Install dependencies
+      run: gem install rspec
+
+    - name: Run tests
+      run: rspec
